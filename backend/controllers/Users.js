@@ -85,16 +85,16 @@ export const updateUser = async (req, res) => {
 };
 
 export const deleteUser = async (req, res) => {
-	const Users = await Users.findOne({
+	const user = await Users.findOne({
 		where: {
 			uuid: req.params.id,
 		},
 	});
-	if (!Users) return res.status(404).json({ msg: "User Not Found" });
+	if (!user) return res.status(404).json({ msg: "User Not Found" });
 	try {
 		await Users.destroy({
 			where: {
-				id: Users.id,
+				id: user.id,
 			},
 		});
 		res.status(200).json({ msg: "User Deleted" });
