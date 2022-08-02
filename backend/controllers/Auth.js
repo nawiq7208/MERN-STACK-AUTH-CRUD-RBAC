@@ -25,7 +25,7 @@ export const Me = async (req, res) => {
 	const user = await User.findOne({
 		attributes: ["uuid", "name", "email", "role"],
 		where: {
-			uuid: req.body.userId,
+			uuid: req.session.userId,
 		},
 	});
 	if (!user) return res.status(404).json({ msg: "User Not Found" });

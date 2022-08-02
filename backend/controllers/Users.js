@@ -65,7 +65,7 @@ export const updateUser = async (req, res) => {
 			.status(400)
 			.json({ msg: "Password and Confirm Password are not match" });
 	try {
-		await user.update(
+		await User.update(
 			{
 				name: name,
 				email: email,
