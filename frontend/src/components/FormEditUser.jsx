@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormAddUser = () => {
+const FormEditUser = () => {
 	return (
 		<div>
 			<h1 className="title">Users</h1>
@@ -62,4 +62,4 @@ const FormAddUser = () => {
 	);
 };
 
-export default FormAddUser;
+export default FormEditUser;
