@@ -4,9 +4,9 @@ const FormEditUser = () => {
 	return (
 		<div>
 			<h1 className="title">Users</h1>
-			<h2 className="subtitle">Add New User</h2>
+			<h2 className="subtitle">Update User</h2>
 			<div className="card is-shadowless">
-				<div className="card-content">
+				<card-content>
 					<div className="content">
 						<form>
 							<div className="field">
@@ -30,7 +30,8 @@ const FormEditUser = () => {
 										placeholder="******"
 									/>
 								</div>
-                                <div className="field">
+							</div>
+							<div className="field">
 								<label className="label">Confirm Password</label>
 								<div className="control">
 									<input
@@ -39,24 +40,28 @@ const FormEditUser = () => {
 										placeholder="******"
 									/>
 								</div>
-                                <div className="field">
+							</div>
+							<div className="field">
 								<label className="label">Role</label>
 								<div className="control">
 									<div className="select is-fullwidth">
-                                        <select>
-                                            <option value="admin">Admin</option>
-                                            <option value="user">User</option>
+										<select>
+											<option value="admin">Admin</option>
+											<option value="user">User</option>
+										</select>
+									</div>
+								</div>
 							</div>
 							<div className="field">
-                                <div className="control">
-                                <button className="button is-success">
-                                    Save
-                                </button>
-                                </div>
+								<div className="control">
+									<button className="button is-success is-fullwidth">
+										Update
+									</button>
+								</div>
 							</div>
 						</form>
 					</div>
-				</div>
+				</card-content>
 			</div>
 		</div>
 	);
