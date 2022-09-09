@@ -25,6 +25,13 @@ const Login = () => {
 		dispatch(LoginUser({ email, password }));
 	};
 
+	useEffect(() => {
+		if (user || isSuccess) {
+			navigate("/dashboard");
+		}
+		dispatch(reset());
+	}, [user, isSuccess, dispatch, navigate]);
+
 	return (
 		<section className="hero has-background-grey-light is-fullheight is-fullwidth">
 			<div className="hero-body">
