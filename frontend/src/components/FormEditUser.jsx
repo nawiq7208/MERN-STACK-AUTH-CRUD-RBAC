@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const FormEditUser = () => {
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [confPassword, setConfPassword] = useState("");
+	const [role, setRole] = useState("");
+	const [msg, setMsg] = useState("");
+	const navigate = useNavigate();
+
+	const saveUser = async (e) => {
+		e.preventDefault();
+		try {
+			await axios.post("http://localhost:5000/users", {
+				name: name,
+				email: email,
+				password: password,
+				confPassword: confPassword,
+				role: role,
+			});
+			navigate("/users");
+		} catch (error) {
+			if (error.response) {
+				setMsg(error.response.data.msg);
+			}
+		}
+	};
+
 	return (
 		<div>
 			<h1 className="title">Users</h1>
